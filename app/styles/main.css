@@ -1,0 +1,80 @@
+
+:root {
+    --hn-primary: #087e8b;
+    --hn-primary-dark: #065b67;
+    --hn-text: #16243a;
+    --hn-muted: #64748b;
+    --hn-border: #e2e8f0;
+    --hn-surface: #ffffff;
+    --hn-background: #f5f8fc;
+}
+
+.stApp {
+    background-color: var(--hn-background);
+    color: var(--hn-text);
+}
+
+.block-container {
+    max-width: 1440px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--hn-text);
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-weight: 750;
+}
+
+div[data-testid="stMetric"] {
+    background: var(--hn-surface);
+    border: 1px solid var(--hn-border);
+    border-radius: 14px;
+    padding: 1.2rem;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: var(--hn-muted);
+}
+
+div[data-testid="stMetricValue"] {
+    color: var(--hn-text);
+    font-weight: 700;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 14px;
+}
+
+section[data-testid="stSidebar"] {
+    border-right: 1px solid var(--hn-border);
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--hn-primary);
+    border-color: var(--hn-primary);
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--hn-primary-dark);
+    border-color: var(--hn-primary-dark);
+}
+
+.stDownloadButton > button {
+    border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+    }
+}

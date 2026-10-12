@@ -1,0 +1,17 @@
+
+.venv/
+.env
+.streamlit/secrets.toml
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+logs/
+*.log
+reports/outputs/*
+!reports/outputs/.gitkeep
+.DS_Store
+.vscode/
+.ipynb_checkpoints/
