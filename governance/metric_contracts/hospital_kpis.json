@@ -1,0 +1,59 @@
+
+{
+  "contract_version": "1.0.0",
+  "domain": "hospital_performance",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Hospital General Information",
+    "dataset_id": "xubh-q36u",
+    "url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+    "grain": "one facility per source snapshot"
+  },
+  "metrics": [
+    {
+      "id": "hospital_count",
+      "name": "Hospital Count",
+      "formula": "COUNT(*)",
+      "unit": "facilities",
+      "denominator": null,
+      "null_policy": "Facility ID required",
+      "limitation": "Count of facilities in the selected CMS snapshot"
+    },
+    {
+      "id": "rated_hospitals",
+      "name": "Rated Hospitals",
+      "formula": "COUNT(overall_rating)",
+      "unit": "facilities",
+      "denominator": null,
+      "null_policy": "Exclude missing ratings",
+      "limitation": "Rating availability is not equivalent to clinical quality"
+    },
+    {
+      "id": "rating_coverage_pct",
+      "name": "Rating Coverage",
+      "formula": "100 * COUNT(overall_rating) / COUNT(*)",
+      "unit": "percent",
+      "denominator": "All selected hospitals",
+      "null_policy": "Missing ratings count in denominator",
+      "limitation": "Measures reporting coverage, not quality"
+    },
+    {
+      "id": "average_rating",
+      "name": "Average Reported Rating",
+      "formula": "AVG(overall_rating)",
+      "unit": "stars",
+      "denominator": "Rated hospitals only",
+      "null_policy": "Exclude missing ratings",
+      "limitation": "Unweighted and not risk-adjusted"
+    },
+    {
+      "id": "emergency_coverage_pct",
+      "name": "Emergency Service Availability",
+      "formula": "100 * COUNT(*) FILTER (WHERE emergency_services IS TRUE) / COUNT(*)",
+      "unit": "percent",
+      "denominator": "All selected hospitals",
+      "null_policy": "Unknown values remain in denominator",
+      "limitation": "Availability flag does not measure capacity or service quality"
+    }
+  ]
+}
