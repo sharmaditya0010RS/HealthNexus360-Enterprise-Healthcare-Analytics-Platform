@@ -68,7 +68,7 @@ def render_report_group(report_type: str) -> None:
                 file_name=file_path.name,
                 mime=MIME_TYPES[file_path.suffix],
                 key=f"download_{report_type}_{file_path.name}",
-                use_container_width=True,
+                width="stretch",
             )
 
 

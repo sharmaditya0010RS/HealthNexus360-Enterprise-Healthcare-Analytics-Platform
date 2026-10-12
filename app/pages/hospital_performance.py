@@ -173,7 +173,7 @@ def render():
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
     )
-    st.plotly_chart(figure, use_container_width=True)
+    st.plotly_chart(figure, width="stretch")
 
     section_header(
         "Geographic Comparison",
@@ -208,7 +208,7 @@ def render():
 
     st.dataframe(
         state_summary,
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         column_config={
             "state": "State",
@@ -251,7 +251,7 @@ def render():
 
     st.dataframe(
         explorer,
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
